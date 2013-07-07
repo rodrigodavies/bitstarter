@@ -69,6 +69,8 @@ if(require.main == module) {
     var checkJson = checkHtmlFile(program.file, program.checks);
     var outJson = JSON.stringify(checkJson, null, 4);
     console.log(outJson);
+    
+// If there are no arguments, use the defaults
 } else {
     exports.checkHtmlFile = checkHtmlFile;
 }
