@@ -22,7 +22,6 @@ References:
 */
 
 var HTMLFILE_DEFAULT = "index.html";
-var URL_DEFAULT = "http://www.google.com";
 var CHECKSFILE_DEFAULT = "checks.json";
 
 var fs = require('fs');
@@ -60,6 +59,7 @@ var checkHtmlFromUrl = function(htmlfile, checksfile) {
     return theChecker($, checksfile);
 };
 
+// Separating the checking function to reduce code duplication
 var theChecker = function(htmlfile,checksfile) {   
     var checks = loadChecks(checksfile).sort();
     // set up the dictionary object
@@ -73,8 +73,8 @@ var theChecker = function(htmlfile,checksfile) {
 };   
 
 // Console logger - using a function to reduce code duplication
-var logJson = function (checkJson) {
-    var outJson = JSON.stringify(checkJson, null, 4);
+var printResults = function (checkedJson) {
+    var outJson = JSON.stringify(checkedJson, null, 4);
     console.log(outJson);
 };
 
@@ -90,17 +90,16 @@ if(require.main == module) {
         .option('-f, --file <html_file>', 'Path to index.html', clone(assertFileExists), HTMLFILE_DEFAULT)
         .option('-u, --url <url>', 'URL path')
         .parse(process.argv);
-    var checkJson;
 // If there is a URL parameter, run a get request and checker
     if (program.url) {
         rest.get(program.url).on('complete', function(result) {
-            checkJson = checkHtmlFromUrl(result, program.checks);
-            logJson(checkJson);
+            checkedJson = checkHtmlFromUrl(result, program.checks);
+            printResults(checkedJson);
         });
     } 
     else {
-        checkJson = checkHtmlFile(program.file, program.checks);
-        logJson(checkJson);
+        checkedJson = checkHtmlFile(program.file, program.checks);
+        printResults(checkedJson);
     }
 // If there are no arguments, use the defaults
 } else {
