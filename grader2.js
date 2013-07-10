@@ -49,14 +49,12 @@ var loadChecks = function(checksfile) {
     return JSON.parse(fs.readFileSync(checksfile));
 };
 
-var checkHtmlFile = function(htmlfile, checksfile) {
-    $ = loadCheerio(htmlfile);
-    return theChecker($, checksfile);
+var checkHtmlFile = function(htmlfile) {
+    return loadCheerio(htmlfile);
 };
 
-var checkHtmlFromUrl = function(htmlfile, checksfile) {
-    $ = cheerio.load(htmlfile);
-    return theChecker($, checksfile);
+var checkHtmlFromUrl = function(url) {
+    return cheerio.load(url);
 };
 
 // Separating the checking function to reduce code duplication
@@ -69,9 +67,14 @@ var theChecker = function(htmlfile,checksfile) {
         var present = $(checks[ii]).length > 0;
         out[checks[ii]] = present;
     }
-    var outJson = JSON.stringify(out, null, 4);
-    console.log(outJson);
+    return out;
 };   
+
+// Console logger - using a function to reduce code duplication
+var printResults = function (checkedJson) {
+    var outJson = JSON.stringify(checkedJson, null, 4);
+    console.log(outJson);
+};
 
 var clone = function(fn) {
     // Workaround for commander.js issue.
@@ -88,12 +91,16 @@ if(require.main == module) {
 // If there is a URL parameter, run a get request and checker
     if (program.url) {
         rest.get(program.url).on('complete', function(result) {
-            checkHtmlFromUrl(result, program.checks);
+            var inFile = checkHtmlFromUrl(result);
         });
+        return inFile;
     } 
     else {
-        checkHtmlFile(program.file, program.checks);
-    }
+        var inFile = checkHtmlFile(program.file);
+    };
+
+    var checkedJson = theChecker(inFile, program.checks);
+    printResults(checkedJson);
 // If there are no arguments, use the defaults
 } else {
     exports.checkHtmlFile = checkHtmlFile;
