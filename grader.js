@@ -39,18 +39,13 @@ var assertFileExists = function(infile) {
     return instr;
 };
 
-// Helper function to load the static html file we're checking into cheerio
-var loadCheerio = function(htmlfile) {
-    return cheerio.load(fs.readFileSync(htmlfile));
-};
-
 // Parse and return the fields we've specified in checks.json
 var loadChecks = function(checksfile) {
     return JSON.parse(fs.readFileSync(checksfile));
 };
 
 var checkHtmlFile = function(htmlfile, checksfile) {
-    $ = loadCheerio(htmlfile);
+    $ = cheerio.load(fs.readFileSync(htmlfile));
     return theChecker($, checksfile);
 };
 
