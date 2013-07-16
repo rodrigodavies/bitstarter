@@ -5,14 +5,13 @@
     <meta charset="utf-8">
     <title>Call to Action: Bitstarter</title>
     <meta name="viewport" content"width=device-width, initial=scale=1.0">
-    <link type="text/css" rel="stylesheet" 
-          href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined-no-icons.min.css">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400' rel='stylesheet' type='text/css'>
-    <link href='css/social-buttons.css' rel='stylesheet' type='text/css'>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
-    <script src="js/bootstrap.js"></script>
-    <script src="js/jquery.js"></script>
+    <link href='https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css' rel='stylesheet' type='text/css'>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js"></script>
+    <script src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js"></script>
 
     <style type="text/css">
     /* Responsive settings */
@@ -51,6 +50,7 @@
 
       body {
         font-family: 'Open Sans', Helvetica, Arial, sans-serif; 
+        background-color: #eee;
       }
 
       .heading, .subheading {
@@ -156,7 +156,7 @@
       </div> 
       <div class="row-fluid subheading">
         <div class="span12">
-          <p class="lead">Giving voice to communities</p>
+          <p class="lead">Giving voice to communities - from any phone</p>
         </div>
       </div>
       <div class="row-fluid pitch">
@@ -206,12 +206,12 @@
 
     <div class="row-fluid section1">
       <div class="span5 offset1 asset">
-        <img class="img-polaroid" src="http://placehold.it/480x300">
+        <img class="img-polaroid" src="http://rodrigodavies.com/blog/wp-content/uploads/2012/06/cgnet_swara.jpg">
       </div>
 
       <div class="span5 copy">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis blandit odio, id ullamcorper nulla. Nulla arcu sem, porta sed condimentum mattis, consectetur a enim. Nam convallis magna eget dui bibendum hendrerit dapibus at nisi. Aliquam vulputate tortor pulvinar blandit dapibus. Suspendisse eu fringilla lacus. Cras enim justo, dapibus a lobortis non, mattis eu urna. 
+          Call to Action is an open-source web platform for creating telephone-based services such as hotlines, voice petitions and phone blogging that grew out of a project at MIT's <a href="http://civic.mit.edu">Center for Civic Media</a>. The platform provides an easy-to-use graphical interface that enables the user to plan the flow of calls, record custom audio and make use of all the input and output features offered by a regular telephone. The service requires no software programming experience, and users can build a service in under half an hour. Our design process so far has been built on <a href="http://rodrigodavies.com/blog/2013/04/08/how-to-make-phone-services-fast-and-easy-to-design/">user-centered and co-design methodologies</a>, working in partnership with the communities who've used similar services in the past.
         </p>
       </div>
     </div>
@@ -219,13 +219,12 @@
     <div class="row-fluid section2">
       <div class="span5 offset1 copy copy-right">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis blandit odio, id ullamcorper nulla. Nulla arcu sem, porta sed condimentum mattis, consectetur a enim. Nam convallis magna eget dui bibendum hendrerit dapibus at nisi. Aliquam vulputate tortor pulvinar blandit dapibus. Suspendisse eu fringilla lacus. Cras enim justo, dapibus a lobortis non, mattis eu urna.
-
+          To date we have released an <a href="http://calltoaction.mit.edu/c2a/">alpha version of the platform's design interface</a>, but now we need to develop the scripting and hosting functions the platform will use. That's why we're launching this bitstarter campaign. We know there are lots of use cases out there, and lots of talented engineers working on VoIP. So come and join us, and help make open source community VoIP projects an easy, lightweight reality for groups everywhere. Folks across the world have been implementing <a href="http://rodrigodavies.com/blog/wp-content/uploads/2012/06/cgnet_swara.jpg">innovative voice solutions to social problems</a> - in the future, Call to Action can help make some of those projects, faster, stronger and easier to maintain.
         </p>
       </div>
 
       <div class="span5 asset">
-        <img class="img-polaroid" src="http://placehold.it/480x300">
+        <img class="img-polaroid" src="http://rodrigodavies.com/blog/wp-content/uploads/2013/04/Screen-Shot-2013-04-08-at-12.34.52-PM-580x362.png">
       </div>
 
     </div>
@@ -233,33 +232,47 @@
     <div class="row-fluid faq">
         <div class="span10 offset1">
           <h3>FAQ</h3>
-
+        
             <div class="accordion" id="accordion2">
               <div class="accordion-group">
                 <div class="accordion-heading">
                   <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                    Why are you developing for voice?
+                    Why are we developing this platform?
                   </a>
                 </div>
                 <div id="collapseOne" class="accordion-body collapse in">
                   <div class="accordion-inner">
-                    Who is Call to Action for?
+                          <div class="row-fluid">
+                Following the launch of <a href="http://civic.mit.edu/blog/beckyh/case-study-ndns-voip-drupal">New Day New Standard</a>, an innovative phone service the team developed with <a href="www.rev-it.org">REV-</a> and Domestic Workers United to inform domestic workers and their employers in New York of changes in legislation affecting them, it was clear that a wide range of community groups could benefit from developing phone-based information services of their own. Since NDNS was created in VoIP Drupal scripting language, though, users without that specific programming experience would need to invest a significant amount resources to create a similar service. Secondly, our research has found that most user communities find creating a voice tree to be a conceptually challenging exercise. We hope to simplify the process with a visually oriented system that mirrors <a href="workshop_method.html">a paper-and-pen workshop method</a> the team uses with community partners.
                   </div>
                 </div>
               </div>
               <div class="accordion-group">
                 <div class="accordion-heading">
                   <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                    Who are you?
+                    How does the platform work?
                   </a>
                 </div>
                 <div id="collapseTwo" class="accordion-body collapse">
                   <div class="accordion-inner">
-                    When can I use Call to Action?
+                    Users build their services by dragging and dropping pre-defined elements onto a canvas and linking these elements with ties. Elements are distinguished by colour and shapes to help users to quickly identify the elements they need. Commonly used sequences of elements (such as a caller recording a message to be submitted to the service) are given as grouped templates or 'blocks' that can be imported onto the canvas. After completing a design, the user can save their work for publishing, and retain the files for future editing. As well as facilitating the easy creation of telephone services, the platform gives users advice on how to record effective voice prompts and estimates the call length at each stage of the call flow. This allows creators to optimize their services to suit caller needs.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+                    How are you building Call to Action?
+                  </a>
+                </div>
+                <div id="collapseThree" class="accordion-body collapse">
+                  <div class="accordion-inner">
+                    Call to Action uses Javascript (backbone) and CSS to handle the manipulation of elements on the canvas. Our goal is that the platform will output to a script that can be imported into several VoIP frameworks, including <a href="http://drupal.org/project/voipdrupal">VoIP Drupal</a>, Twilio and Tropo. The platform's working code is maintained on <a href="http://github.com/rodrigodavies/call2action">github</a>, and you can read more about the background and the team at <a href="http://calltoaction.mit.edu">calltoaction.mit.edu</a>.
                   </div>
                 </div>
               </div>
             </div>
+          </div> 
 
         </div>
       </div>
